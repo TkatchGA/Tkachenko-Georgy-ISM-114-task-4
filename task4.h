@@ -40,7 +40,7 @@ public:
 /**
 * \brief Класс Trigonometry для вычисления значений и производных
 */
-class trigonometry :public Trig
+class trigonometry :public trig
 {
 protected:
 
@@ -48,6 +48,20 @@ protected:
 	* \brief Получение значения переменной
 	*/
 	double get_num(const double a) const;
+
+private:
+	void set_sin();
+	void set_cos();
+	void set_tg();
+	void set_derivative_sin();
+	void set_derivative_cos();
+	void set_derivative_tg();
+	double sin;
+	double cos;
+	double tg;
+	double derivative_sin;
+	double derivative_cos;
+	double derivative_tg;
 
 public:
 
@@ -106,7 +120,7 @@ public:
 	*/
 	double get_derivative_tg() const;
 
-
+	
     // перегружаем операторы ввода и вывода для упрожения ввода от пользователя и вывода на экран
 	/**
 	 * \brief Перегруженный оператор ввода
@@ -118,17 +132,11 @@ public:
 	*/
 	friend std::ostream& operator<< (std::ostream& out, const trigonometry& f);
 
-private:
-	void set_sin();
-	void set_cos();
-	void set_tg();
-	void set_derivative_sin();
-	void set_derivative_cos();
-	void set_derivative_tg();
-	double sin;
-	double cos;
-	double tg;
-	double derivative_sin;
-	double derivative_cos;
-	double derivative_tg;
+	/**
+     * @brief Метод для корректного вывода ответа
+     */
+    //std::string ToString();
+	
+
+
 };

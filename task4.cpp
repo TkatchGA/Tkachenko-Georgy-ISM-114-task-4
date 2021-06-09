@@ -93,13 +93,14 @@ double trigonometry::get_derivative_sin() const
 
 double trigonometry::get_derivative_cos() const
 {
-	return this->cos;
+	return this->derivative_cos;
 }
 
 double trigonometry::get_derivative_tg() const
 {
 	return  this->derivative_tg;
 }
+
 
 std::istream& operator>>(std::istream& number, trigonometry& input)
 {
@@ -119,3 +120,18 @@ std::ostream& operator<<(std::ostream& out, const trigonometry& show)
 		<< "tg(x)'= " << show.get_derivative_tg() << std::endl;
 	return out;
 }
+
+/*
+std::string student::ToString() const;
+{
+  std::stringstream buffer;
+  buffer << "{" << this->sin << ", ";
+  buffer << this->cos << ", ";
+  buffer << this->tg << ", ";
+  buffer << this->derivative_sin << ", ";
+  buffer << this->derivative_cos << ", ";
+  buffer << this->derivative_tg << "}";
+
+  return buffer.str();
+}
+*/
